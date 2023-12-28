@@ -1,0 +1,16 @@
+
+.body-bg {
+    background-image: url("../images/win_background.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    height: 100vh;
+}
+
+.border-right {
+    border-right: 1px solid #ffffff;;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #ffffff;
+}

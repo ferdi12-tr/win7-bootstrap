@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="assets/style/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body class="body-bg">
+
+    <!-- Masaüstü iconları -->
+    <div>
+        <div class="ms-4 mt-4">
+            <div class="d-block fs-1"><i data-bs-toggle="modal" data-bs-target="#bilgisayarModal"
+                    onclick="openFolderNav('bilgisayar')" class="fa-solid fa-desktop"></i></div>
+        </div>
+        <p class="ms-3">Bilgisayar</p>
+
+        <div class="ms-4 mt-4">
+            <div class="d-block fs-1"><i data-bs-toggle="modal" data-bs-target="#belgelerModal"
+                    onclick="openFolderNav('belgeler')" class="fa-solid fa-folder-open"></i></div>
+        </div>
+        <p class="ms-3">Belgeler</p>
+
+        <div class="ms-4 mt-4">
+            <div class="d-block fs-1"><i data-bs-toggle="modal" data-bs-target="#resimlerModal"
+                    onclick="openFolderNav('resimler')" class="fa-solid fa-images"></i></div>
+        </div>
+        <p class="ms-3">Resimler</p>
+
+        <div class="ms-4 mt-4">
+            <div class="d-block fs-1"><i data-bs-toggle="modal" data-bs-target="#uygulamalarModal"
+                    onclick="openFolderNav('uygulamalar')" class="fa-solid fa-shapes"></i></div>
+        </div>
+        <p class="ms-2">Uygulamalar</p>
+    </div>
+
+    <!-- Belgeler Modalı -->
+    <div class="modal fade " id="belgelerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-secondary text-light">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Bilgisayar</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row" style="height: 500px;">
+                            <div class="col-5 border-right">
+                                <p class="border-bottom">Hızlı Erişim</p>
+                                <ul style="list-style: none; padding: 0; margin-top: 50px;">
+                                    <li data-bs-toggle="modal" data-bs-target="#bilgisayarModal" onclick="openFolderNav('bilgisayar', isOpen=true)">
+                                        <i class="fa-solid fa-desktop me-1"></i>
+                                        Bilgisayar
+                                    </li>
+                                    <li data-bs-toggle="modal" data-bs-target="#belgelerModal" onclick="openFolderNav('belgeler', isOpen=true)">
+                                        <i class="fa-solid fa-folder-open me-1"></i>
+                                        Belgeler
+                                    </li>
+                                    <li data-bs-toggle="modal" data-bs-target="#resimlerModal" onclick="openFolderNav('resimler', isOpen=true)">
+                                        <i class="fa-solid fa-images me-1"></i>
+                                        Resimler
+                                    </li>
+                                    <li data-bs-toggle="modal" data-bs-target="#uygulamalarModal" onclick="openFolderNav('uygulamalar', isOpen=true)">
+                                        <i class="fa-solid fa-shapes me-1"></i>
+                                        Uygulamalar
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-7 ">
+                                <div class="row">
+                                    <div class="col-4 m-3">
+                                        <!-- <i  class="fa-solid fa-file-pdf fa-5x"></i> -->
+                                        <img style="width: 75px; height: 75px;" src="assets/images/excel.png"
+                                            alt="img1">
+                                        <small>My Excel</small>
+                                    </div>
+                                    <div class="col-4 m-3">
+                                        <!-- <i class="fa-regular fa-file-word fa-5x"></i> -->
+                                        <img style="width: 75px; height: 75px;" src="assets/images/word.png" alt="img1">
+                                        <small>My Docs</small>
+                                    </div>
+                                    <div class="col-4  m-3">
+                                        <!-- <i class="fa-solid fa-file-excel fa-5x"></i> -->
+                                        <img style="width: 75px; height: 75px;" src="assets/images/pdf.png" alt="img1">
+                                        <small>My Excel</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Uygulamalar Modalı -->
+    <div class="modal fade " id="uygulamalarModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-secondary text-light">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Bilgisayar</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row" style="height: 500px;">
+                            <div class="col-5 border-right">
+                                <p class="border-bottom">Hızlı Erişim</p>
+                                <ul style="list-style: none; padding: 0; margin-top: 50px;">
+                                    <li data-bs-toggle="modal" data-bs-target="#bilgisayarModal" onclick="openFolderNav('bilgisayar', isOpen=true)">
+                                        <i class="fa-solid fa-desktop me-1"></i>
+                                        Bilgisayar
+                                    </li>
+                                    <li data-bs-toggle="modal" data-bs-target="#belgelerModal" onclick="openFolderNav('belgeler', isOpen=true)">
+                                        <i class="fa-solid fa-folder-open me-1"></i>
+                                        Belgeler
+                                    </li>
+                                    <li data-bs-toggle="modal" data-bs-target="#resimlerModal" onclick="openFolderNav('resimler', isOpen=true)">
+                                        <i class="fa-solid fa-images me-1"></i>
+                                        Resimler
+                                    </li>
+                                    <li data-bs-toggle="modal" data-bs-target="#uygulamalarModal" onclick="openFolderNav('uygulamalar', isOpen=true)">
+                                        <i class="fa-solid fa-shapes me-1"></i>
+                                        Uygulamalar
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-7 ">
+                                <div class="row">
+                                    <div class="col-4 m-3">
+                                        <img style="width: 75px; height: 75px;" src="assets/images/hm.png" alt="img1">
+                                        <small>Hesap Makinesi</small>
+                                    </div>
+                                    <div class="col-4 m-3">
+                                        <img style="width: 75px; height: 75px;" src="assets/images/vscode.png"
+                                            alt="img1">
+                                        <small>VS Code</small>
+                                    </div>
+                                    <div class="col-4  m-3">
+                                        <img style="width: 75px; height: 75px;" src="assets/images/crome.png"
+                                            alt="img1">
+                                        <small>Chrome</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Resimler Modalı -->
+    <div class="modal fade " id="resimlerModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-secondary text-light">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="title">Resimler</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="showImageModalContent()"></button>
+                </div>
+                <div class="modal-body">
+                    <div id="modal-image"></div>
+                    <div class="container" id="modal-container">
+                        <div class="row" style="height: 500px;">
+                            <div class="col-5 border-right">
+                                <p class="border-bottom">Hızlı Erişim</p>
+                                <ul style="list-style: none; padding: 0; margin-top: 50px;">
+                                    <li data-bs-toggle="modal" data-bs-target="#bilgisayarModal" onclick="openFolderNav('bilgisayar', isOpen=true)">
+                                        <i class="fa-solid fa-desktop me-1"></i>
+                                        Bilgisayar
+                                    </li>
+                                    <li data-bs-toggle="modal" data-bs-target="#belgelerModal" onclick="openFolderNav('belgeler', isOpen=true)">
+                                        <i class="fa-solid fa-folder-open me-1"></i>
+                                        Belgeler
+                                    </li>
+                                    <li data-bs-toggle="modal" data-bs-target="#resimlerModal" onclick="openFolderNav('resimler', isOpen=true)">
+                                        <i class="fa-solid fa-images me-1"></i>
+                                        Resimler
+                                    </li>
+                                    <li data-bs-toggle="modal" data-bs-target="#uygulamalarModal" onclick="openFolderNav('uygulamalar', isOpen=true)">
+                                        <i class="fa-solid fa-shapes me-1"></i>
+                                        Uygulamalar
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-7 ">
+                                <div class="row">
+                                    <div class="col-4 m-3">
+                                        <img onclick="displayImageOnModal('image1')" style="width: 100px; height: 100px;" src="assets/images/image1.jpg"
+                                            alt="img1">
+                                        <small>Resim 1</small>
+                                    </div>
+                                    <div class="col-4 m-3">
+                                        <img onclick="displayImageOnModal('image2')" style="width: 100px; height: 100px;" src="assets/images/image2.jpg"
+                                            alt="img2">
+                                        <small>Resim 2</small>
+                                    </div>
+                                    <div class="col-4  m-3">
+                                        <img onclick="displayImageOnModal('image3')" style="width: 100px; height: 100px;" src="assets/images/image3.jpg"
+                                            alt="img3">
+                                        <small>Resim 3</small>
+                                    </div>
+                                    <div class="col-4  m-3">
+                                        <img onclick="displayImageOnModal('image4')" style="width: 100px; height: 100px;" src="assets/images/image4.jpg"
+                                            alt="img4">
+                                        <small>Resim 4</small>
+                                    </div>
+                                    <div class="col-4  m-3">
+                                        <img onclick="displayImageOnModal('image5')" style="width: 100px; height: 100px;" src="assets/images/image5.jpg"
+                                            alt="img5">
+                                        <small>Resim 5</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bilgisayar Modalı -->
+    <div class="modal fade " id="bilgisayarModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-secondary text-light">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Bilgisayar</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <div class="row" style="height: 500px;">
+                            <div class="col-5 border-right">
+                                <p class="border-bottom">Hızlı Erişim</p>
+                                <ul style="list-style: none; padding: 0; margin-top: 50px;">
+                                    <li data-bs-toggle="modal" data-bs-target="#bilgisayarModal" onclick="openFolderNav('bilgisayar', isOpen=true)">
+                                        <i class="fa-solid fa-desktop me-1"></i>
+                                        Bilgisayar
+                                    </li>
+                                    <li data-bs-toggle="modal" data-bs-target="#belgelerModal" onclick="openFolderNav('belgeler', isOpen=true)">
+                                        <i class="fa-solid fa-folder-open me-1"></i>
+                                        Belgeler
+                                    </li>
+                                    <li data-bs-toggle="modal" data-bs-target="#resimlerModal" onclick="openFolderNav('resimler', isOpen=true)">
+                                        <i class="fa-solid fa-images me-1"></i>
+                                        Resimler
+                                    </li>
+                                    <li data-bs-toggle="modal" data-bs-target="#uygulamalarModal" onclick="openFolderNav('uygulamalar', isOpen=true)">
+                                        <i class="fa-solid fa-shapes me-1"></i>
+                                        Uygulamalar
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-7">
+                                <div class="card bg-secondary text-light">
+                                    <small>Local Disk (C:)</small>
+                                    <img src="./assets/images/disk.jpg" class="card-img-top w-25 ms-3" alt="disc"></img>
+                                    <div class="card-body">
+                                        <div class="progress " role="progressbar" aria-label="disk" aria-valuenow="30"
+                                            aria-valuemin="0" aria-valuemax="100">
+                                            <div class="progress-bar" style="width: 30%;"></div>
+                                        </div>
+                                    </div>
+                                    <small>99,0 GB free of 222 GB</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-bottom">
+        <div class="container-fluid">
+            <div class="dropup">
+                <button role="button" type="button" class="btn dropdown" data-bs-toggle="dropdown">
+                    <i class="fab fa-windows fa-2x"></i>
+                </button>
+                <ul class="dropdown-menu ps-3 pb-3 p-5">
+                    <li data-bs-toggle="modal" data-bs-target="#uygulamalarModal" onclick="openFolderNav('uygulamalar')"><a class="dropdown-item" href="#"><i class="fa-solid fa-shapes"></i> Uygulamalar</a></li>
+                    <li data-bs-toggle="modal" data-bs-target="#resimlerModal" onclick="openFolderNav('resimler')"><a class="dropdown-item" href="#"><i class="fa-solid fa-images"></i></i> Resimler</a></li>
+                    <li data-bs-toggle="modal" data-bs-target="#belgelerModal" onclick="openFolderNav('belgeler')"><a class="dropdown-item" href="#"><i class="fa-solid fa-folder-open"></i> Belgeler</a></li>
+                    <li data-bs-toggle="modal" data-bs-target="#bilgisayarModal" onclick="openFolderNav('bilgisayar')"><a class="dropdown-item" href="#"><i class="fa-solid fa-desktop"></i> Bilgisayar</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="poweroff.html"> <i class="fas fa-power-off"></i> Bilgisayarı Kapat</a></li>
+                </ul>
+            </div>
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+
+
+
+            <ul id="openFolderNav" class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+            </ul>
+
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="dropup">
+                        <button role="button" type="button" class="btn dropdown" data-bs-toggle="dropdown">
+                            <i class="fa-solid fa-chevron-up me-3 mt-2"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#"><i class="fa-brands fa-bluetooth-b"></i></a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa-brands fa-spotify"></i></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <i class="fa-solid fa-wifi me-3 mt-3"></i>
+                    </li>
+
+                    <li class="nav-item">
+                        <i class="fa-solid fa-volume-high me-3 mt-3"></i>
+                    </li>
+
+
+                    <li class="nav-item">
+                        <i class="fa-solid fa-battery-half me-3 mt-3"></i>
+                    </li>
+
+                    <li class="nav-item">
+                        <a id="time" class="nav-link disabled p-0" aria-disabled="true"></a>
+                        <a id="date" class="nav-link disabled p-0" aria-disabled="true"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+</body>
+
+
+<script>
+    var openFolderList = $("#openFolderNav");
+    var resimlerModal = $("#resimlerModal");
+    var modalImage = $("#modal-image");
+
+    isAlreadyOpen = false // modal açıkken gezinme bölmesinde modal değiştirirken navbardan da iconun değişmesi için 
+
+    function openFolderNav(params, isOpen=false) {
+        isAlreadyOpen = isOpen;
+        openFolderList.empty();
+        var element = params === "bilgisayar" ? "desktop" :
+            params === "belgeler" ? "folder-open" :
+                params === "resimler" ? "images" :
+                    params === "uygulamalar" ? "shapes" : ""
+
+        openFolderList.append(`<li class="nav-item"><i class="fa-solid fa-${element} ms-3 fa-2x"></i></li>`)
+    }
+
+    $(`#bilgisayarModal`).on("hidden.bs.modal", function () {
+        if(!isAlreadyOpen) {
+            openFolderList.empty();
+        }
+        isAlreadyOpen = false;
+    })
+
+    $(`#belgelerModal`).on("hidden.bs.modal", function () {
+        if(!isAlreadyOpen) {
+            openFolderList.empty();
+        }
+        isAlreadyOpen = false;
+    })
+
+    $(`#resimlerModal`).on("hidden.bs.modal", function () {
+        if(!isAlreadyOpen) {
+            openFolderList.empty();
+        }
+        isAlreadyOpen = false;
+
+        showImageModalContent();
+    })
+
+    $(`#uygulamalarModal`).on("hidden.bs.modal", function () {
+        if(!isAlreadyOpen) {
+            openFolderList.empty();
+        }
+        isAlreadyOpen = false;
+    })
+
+
+    setInterval(() => {
+        var t = new Date();
+        console.log(t.toLocaleDateString())
+        $("#date").text(t.toLocaleDateString());
+        $("#time").text(t.toLocaleTimeString());
+    }, 1000)
+
+
+    function displayImageOnModal(imgName) {
+    
+        var imgUrl = `<img style="height:250px;max-width: 100%;" src="assets/images/${imgName}.jpg" alt="img1">`
+
+        resimlerModal.find("#title").text("image: " + imgName + ".jpg");
+        resimlerModal.find("#modal-container").hide();
+
+        modalImage.empty();
+        modalImage.append(imgUrl)
+    }
+
+    function showImageModalContent() {
+        // when image modal is closed, back to the previous state
+        resimlerModal.find("#modal-container").show();
+        modalImage.empty();
+    }
+
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+
+</html>
